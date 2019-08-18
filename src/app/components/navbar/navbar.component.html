@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">
+    <img src="assets/img/todo1.jpg" width="130" height="60" alt=""> Hulk Store</a>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li *ngIf="isAuthenticated()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['inventario']">Inventario</a>
+      </li>
+      <li *ngIf="isAuthenticated()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['kardex']">Kardex</a>
+      </li>
+      <li *ngIf="isAuthenticated()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['compras']">Compras de Productos</a>
+      </li>
+      <li *ngIf="isAuthenticated()" class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['ventas']">Ventas de Productos</a>
+      </li>
+    </ul>
+
+    <span class="navbar-text">
+      <button *ngIf="!isAuthenticated()" (click)="login()" type="button" class="btn btn-outline-primary">Login</button>
+    </span>
+
+    <span class="navbar-text">
+      <button *ngIf="isAuthenticated()" (click)="logout()" type="button" class="btn btn-outline-primary">Logout</button>
+    </span>
+  </div>
+</nav>

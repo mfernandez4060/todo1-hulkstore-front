@@ -1,0 +1,39 @@
+<app-loading *ngIf="loading"></app-loading>
+
+<div *ngIf="!loading" class="row animated fadeIn">
+
+  <div class="col-8">
+    <h3>Listado de Productos</h3>
+  </div>
+  <div class="col-4 text-right">
+    <button routerLink="/search" class="btn btn-outline-danger">Regresar</button>
+  </div>
+</div>
+
+<div *ngIf="!loading" class="row">
+  <div class="col">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Código de Producto</th>
+          <th>Descripción</th>
+          <th>Tipo Superheroe</th>
+          <th>Costo</th>
+          <th>Stock</th>
+          <th>Fecha última actualización</th>          
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of inventario" class="text-black">
+          <td>{{item.producto.codProducto}}</td>
+          <td>{{item.producto.descripcion}}</td>
+          <td>{{item.producto.tipoSuperheroe.nombre}}</td>
+          <td>{{item.producto.costo}}</td>          
+          <td>{{item.stock}}</td>
+          <td>{{item.fechaUltimaActualizacion  | date:'medium' }}</td>          
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>

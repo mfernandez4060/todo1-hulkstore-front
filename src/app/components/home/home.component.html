@@ -1,0 +1,5 @@
+<div *ngIf="auth.userProfile$ | async as profile">
+  <div class="col-md-16">
+    <h1>Bienvenido !!! {{ profile.name }}</h1>
+  </div>
+</div>
