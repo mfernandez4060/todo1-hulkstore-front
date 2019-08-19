@@ -15,23 +15,22 @@ const APP_ROUTES: Routes = [
   {
     path: 'inventario',
     component: InventarioComponent
-    ,
-    canActivate: [AuthGuardService]
+    //,canActivate: [AuthGuardService]
   },
   {
     path: 'kardex',
     component: KardexComponent
-    , canActivate: [AuthGuardService]
+    //, canActivate: [AuthGuardService]
   },
   {
     path: 'compras',
     component: ComprasComponent
-    , canActivate: [AuthGuardService]
+    //, canActivate: [AuthGuardService]
   },
   {
     path: 'ventas',
     component: VentasComponent
-    , canActivate: [AuthGuardService]
+    //, canActivate: [AuthGuardService]
   },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
